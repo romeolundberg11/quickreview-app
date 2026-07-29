@@ -399,6 +399,41 @@
   }
   .footer-contact a:hover{color:var(--teal);}
 
+  /* ---------- SIZE COMPARE ---------- */
+  .size-compare{
+    text-align:center;
+    padding:50px 6vw;
+  }
+  .size-compare-lead{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.85rem;color:var(--gray);
+    text-transform:uppercase;letter-spacing:0.06em;
+    margin-bottom:28px;
+  }
+  .size-compare-cards{
+    display:flex;justify-content:center;align-items:flex-end;
+    gap:36px;
+  }
+  .size-card{
+    width:130px;aspect-ratio:54/85.5;
+    border-radius:10px;
+    display:flex;align-items:flex-end;justify-content:center;
+    padding-bottom:14px;
+  }
+  .size-card span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;font-weight:600;
+    text-align:center;padding:0 8px;
+  }
+  .size-card-ref{
+    border:2px dashed var(--line);
+    color:var(--gray);
+  }
+  .size-card-ours{
+    background:var(--ink);color:var(--paper);
+    box-shadow:0 12px 24px -8px rgba(20,23,31,0.3);
+  }
+
   /* ---------- CONTACT BLOCK ---------- */
   .contact-block{
     max-width:480px;margin:32px auto 0;
@@ -406,6 +441,11 @@
   }
   .contact-lead{
     font-size:0.95rem;color:var(--gray);margin-bottom:14px;
+  }
+  .contact-personal{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:1.05rem;font-weight:500;color:var(--ink);
+    max-width:36ch;margin:0 auto 18px;line-height:1.4;
   }
   .contact-links{
     display:flex;flex-direction:column;gap:10px;
@@ -468,6 +508,7 @@
     <a href="#how" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
     <a href="#cta" data-da="Priser" data-en="Pricing">Priser</a>
     <a href="#faq" data-da="Ofte stillede spørgsmål" data-en="FAQ">Ofte stillede spørgsmål</a>
+    <a href="#contact" data-da="Kontakt os" data-en="Contact us">Kontakt os</a>
   </div>
   <div class="nav-right">
     <div class="lang-toggle" id="langToggle">
@@ -488,6 +529,7 @@
   <a href="#how" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
   <a href="#cta" data-da="Priser" data-en="Pricing">Priser</a>
   <a href="#faq" data-da="Ofte stillede spørgsmål" data-en="FAQ">Ofte stillede spørgsmål</a>
+  <a href="#contact" data-da="Kontakt os" data-en="Contact us">Kontakt os</a>
 </div>
 
 
@@ -521,6 +563,18 @@
   <div class="spec-item"><div class="k" data-da="Materiale" data-en="Material">Materiale</div><div class="v" data-da="PVC, vandresistent" data-en="PVC, water-resistant">PVC, vandresistent</div></div>
   <div class="spec-item"><div class="k" data-da="Teknologi" data-en="Technology">Teknologi</div><div class="v" data-da="NFC-chip" data-en="NFC chip">NFC-chip</div></div>
   <div class="spec-item"><div class="k" data-da="Kompatibilitet" data-en="Compatibility">Kompatibilitet</div><div class="v">iPhone &amp; Android</div></div>
+</div>
+
+<div class="size-compare">
+  <p class="size-compare-lead" data-da="Samme størrelse som dit betalingskort" data-en="Same size as your payment card">Samme størrelse som dit betalingskort</p>
+  <div class="size-compare-cards">
+    <div class="size-card size-card-ref">
+      <span data-da="Betalingskort" data-en="Payment card">Betalingskort</span>
+    </div>
+    <div class="size-card size-card-ours">
+      <span data-da="QuickReview" data-en="QuickReview">QuickReview</span>
+    </div>
+  </div>
 </div>
 
 <section id="why">
@@ -605,7 +659,8 @@
   </div>
   <div class="price-tag" data-da="Fri opsætning af NFC-link · standard PVC-kortstørrelse (85,5 × 54 mm)" data-en="Free NFC link setup · standard PVC card size (85.5 × 54 mm)">Fri opsætning af NFC-link · standard PVC-kortstørrelse (85,5 × 54 mm)</div>
 
-  <div class="contact-block">
+  <div class="contact-block" id="contact">
+    <p class="contact-personal" data-da="Jeg står personligt bag QuickReview og leverer selv hvert kort til din butik." data-en="I'm personally behind QuickReview and deliver every card to your shop myself.">Jeg står personligt bag QuickReview og leverer selv hvert kort til din butik.</p>
     <p class="contact-lead" data-da="Kontakt os for at bestille" data-en="Contact us to order">Kontakt os for at bestille</p>
     <div class="contact-links">
       <a href="tel:+4593925805" class="contact-link">+45 93 92 58 05</a>

@@ -1,9 +1,9 @@
-const CACHE_NAME = 'quickreview-cache-v2';
+const CACHE_NAME = 'quickreview-cache-v3';
 const FILES_TO_CACHE = [
   './index.html',
   './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  './icon-v2-192.png',
+  './icon-v2-512.png'
 ];
 
 self.addEventListener('install', (event) => {

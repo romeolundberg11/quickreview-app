@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+<script>
+  // Runs immediately, before the page renders: strips any leftover
+  // #anchor from the URL so the app always opens at the top, instead
+  // of jumping straight to whatever section was last linked/saved.
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QuickReview — NFC Google Review Card</title>
@@ -41,7 +49,11 @@
     padding:28px 6vw;
     position:relative;z-index:10;
   }
-  .logo{font-weight:700;font-size:1.15rem;letter-spacing:-0.02em;}
+  .logo{
+    display:flex;align-items:center;gap:8px;
+    font-weight:700;font-size:1.15rem;letter-spacing:-0.02em;
+  }
+  .logo svg{flex-shrink:0;}
   .logo span{color:var(--teal);}
   .nav-links{
     display:none;
@@ -520,7 +532,14 @@
 <body>
 
 <nav>
-  <div class="logo">Quick<span>Review</span></div>
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" rx="22" fill="#14171F"/>
+      <circle cx="50" cy="42" r="22" fill="none" stroke="#1FBFA8" stroke-width="7"/>
+      <circle cx="50" cy="42" r="6" fill="#1FBFA8"/>
+    </svg>
+    Quick<span>Review</span>
+  </div>
   <div class="nav-links">
     <a href="#why" data-da="Hvorfor dette kort?" data-en="Why this card?">Hvorfor dette kort?</a>
     <a href="#how" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
@@ -736,6 +755,14 @@
 </footer>
 
 <script>
+  // Fix: always open at the top of the page, even if the URL has a
+  // leftover #anchor from the last link clicked before the app was
+  // added to the home screen (common cause of "jumping to FAQ" bug).
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+  window.scrollTo(0, 0);
+
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   menuToggle.addEventListener('click', () => {

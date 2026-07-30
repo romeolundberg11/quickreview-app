@@ -434,6 +434,24 @@
     box-shadow:0 12px 24px -8px rgba(20,23,31,0.3);
   }
 
+  /* ---------- ABOUT ---------- */
+  .about-section{
+    padding:60px 6vw;
+    text-align:center;
+  }
+  .about-content{max-width:520px;margin:0 auto;}
+  .about-text{
+    font-size:1.05rem;line-height:1.55;color:#3c414c;
+    margin-bottom:22px;
+  }
+  .delivery-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1.5px solid var(--line);
+    border-radius:100px;padding:10px 18px;
+    font-size:0.85rem;font-weight:600;color:var(--ink);
+  }
+  .delivery-badge svg{color:var(--teal);flex-shrink:0;}
+
   /* ---------- CONTACT BLOCK ---------- */
   .contact-block{
     max-width:480px;margin:32px auto 0;
@@ -508,6 +526,7 @@
     <a href="#how" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
     <a href="#cta" data-da="Priser" data-en="Pricing">Priser</a>
     <a href="#faq" data-da="Ofte stillede spørgsmål" data-en="FAQ">Ofte stillede spørgsmål</a>
+    <a href="#about" data-da="Om mig" data-en="About me">Om mig</a>
     <a href="#contact" data-da="Kontakt os" data-en="Contact us">Kontakt os</a>
   </div>
   <div class="nav-right">
@@ -529,6 +548,7 @@
   <a href="#how" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
   <a href="#cta" data-da="Priser" data-en="Pricing">Priser</a>
   <a href="#faq" data-da="Ofte stillede spørgsmål" data-en="FAQ">Ofte stillede spørgsmål</a>
+  <a href="#about" data-da="Om mig" data-en="About me">Om mig</a>
   <a href="#contact" data-da="Kontakt os" data-en="Contact us">Kontakt os</a>
 </div>
 
@@ -576,6 +596,19 @@
     </div>
   </div>
 </div>
+
+<section id="about" class="about-section">
+  <div class="about-content">
+    <p class="about-text" data-da="Jeg er iværksætteren bag QuickReview. Jeg brænder for at hjælpe lokale butikker med at vokse, og står selv bag hele processen — fra opsætning til levering — med fokus på kvalitet og god service." data-en="I'm the person behind QuickReview. I'm passionate about helping local shops grow, and I handle the whole process myself — from setup to delivery — with a focus on quality and good service.">Jeg er iværksætteren bag QuickReview. Jeg brænder for at hjælpe lokale butikker med at vokse, og står selv bag hele processen — fra opsætning til levering — med fokus på kvalitet og god service.</p>
+    <div class="delivery-badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span data-da="Leverer i København og omegn" data-en="Delivering in Copenhagen and the surrounding area">Leverer i København og omegn</span>
+    </div>
+  </div>
+</section>
 
 <section id="why">
   <div class="section-head">

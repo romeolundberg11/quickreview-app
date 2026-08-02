@@ -203,40 +203,15 @@
     border-radius:16px;
     box-shadow:0 30px 60px -20px rgba(20,23,31,0.35), 0 4px 12px rgba(20,23,31,0.08);
     transform:rotate3d(0.4,-1,0,18deg);
-    display:flex;flex-direction:column;align-items:center;
+    display:flex;
     position:relative;overflow:hidden;
     animation:float 5s ease-in-out infinite;
     border:1px solid #eee;
   }
+  .card svg{display:block;}
   @keyframes float{
     0%,100%{transform:rotate3d(0.4,-1,0,18deg) translateY(0px);}
     50%{transform:rotate3d(0.4,-1,0,18deg) translateY(-14px);}
-  }
-  .card-top{
-    width:100%;
-    background:linear-gradient(180deg,#3355CC,#5C7FE0);
-    padding:16% 10% 10%;
-    display:flex;flex-direction:column;align-items:center;
-    flex-shrink:0;
-  }
-  .card-stars{display:flex;gap:3px;margin-bottom:10px;}
-  .card-stars span{color:#E8B930;font-size:1rem;}
-  .card-headline{
-    color:#fff;font-weight:700;text-align:center;
-    font-size:0.82rem;line-height:1.35;letter-spacing:0.01em;
-  }
-  .g-circle{
-    width:22%;aspect-ratio:1/1;
-    background:#fff;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    margin-top:-10%;box-shadow:0 4px 10px rgba(20,23,31,0.15);
-  }
-  .g-circle svg{width:60%;height:60%;}
-  .card-nfc{flex-grow:1;display:flex;align-items:center;justify-content:center;}
-  .card-bottom{
-    width:100%;text-align:center;
-    font-weight:700;font-size:0.78rem;color:var(--ink);
-    padding-bottom:14%;
   }
 
   /* ---------- SPEC STRIP ---------- */
@@ -608,17 +583,43 @@
     <div class="ripple r2"></div>
     <div class="ripple r3"></div>
     <div class="card">
-      <div class="card-top">
-        <div class="card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div class="card-headline">WE WOULD<br>APPRECIATE YOUR<br>GOOGLE REVIEW!</div>
-      </div>
-      <div class="g-circle">
-        <svg width="34" height="34" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-      </div>
-      <div class="card-nfc">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M2 12c0-1 .5-2 1.5-2M2 8c0-2 1.5-4 3.5-4M2 4c0-1 3-2 5-2" stroke="#14171F" stroke-width="1.6" stroke-linecap="round"/><rect x="9" y="7" width="9" height="14" rx="2" stroke="#14171F" stroke-width="1.6"/></svg>
-      </div>
-      <div class="card-bottom" data-da="Tap for at bedømme din oplevelse" data-en="Tap to rate your experience">Tap for at bedømme din oplevelse</div>
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <rect x="0" y="0" width="300" height="300" rx="14" fill="#ffffff"/>
+        <path d="M0,0 H300 V150 C 230,180 190,120 150,145 C 110,170 70,190 0,155 Z" fill="#2B4FCE"/>
+        <path d="M0,0 H300 V145 C 230,175 190,115 150,140 C 110,165 70,185 0,150 Z" fill="#3E63E0"/>
+        <g fill="#E8B930">
+          <polygon points="80,35 83,43 91,43 84.5,48 87,56 80,51 73,56 75.5,48 69,43 77,43"/>
+          <polygon points="115,35 118,43 126,43 119.5,48 122,56 115,51 108,56 110.5,48 104,43 112,43"/>
+          <polygon points="150,35 153,43 161,43 154.5,48 157,56 150,51 143,56 145.5,48 139,43 147,43"/>
+          <polygon points="185,35 188,43 196,43 189.5,48 192,56 185,51 178,56 180.5,48 174,43 182,43"/>
+          <polygon points="220,35 223,43 231,43 224.5,48 227,56 220,51 213,56 215.5,48 209,43 217,43"/>
+        </g>
+        <text x="150" y="82" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="700" font-size="19">WE WOULD</text>
+        <text x="150" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="700" font-size="19">APPRECIATE YOUR</text>
+        <text x="150" y="128" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="700" font-size="19">GOOGLE REVIEW!</text>
+        <circle cx="150" cy="152" r="30" fill="#ffffff"/>
+        <g transform="translate(130,132) scale(0.83)">
+          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        </g>
+        <ellipse cx="150" cy="215" rx="62" ry="38" fill="none" stroke="#14171F" stroke-width="2.5"/>
+        <g stroke="#14171F" stroke-width="3" stroke-linecap="round" fill="none">
+          <path d="M107,215 a10,10 0 0 1 0,0"/>
+          <path d="M100,206 a13,13 0 0 1 0,18"/>
+          <path d="M93,199 a23,23 0 0 1 0,32"/>
+          <path d="M86,192 a33,33 0 0 1 0,46"/>
+        </g>
+        <g transform="translate(163,192)">
+          <rect x="0" y="0" width="26" height="42" rx="5" fill="#ffffff" stroke="#14171F" stroke-width="2.5"/>
+          <text x="13" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7" fill="#14171F">NFC</text>
+          <path d="M-14,44 C-6,30 4,30 12,42" stroke="#14171F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M-18,50 C-16,46 -14,44 -14,44" stroke="#14171F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </g>
+        <text x="150" y="272" text-anchor="middle" fill="#14171F" font-family="Arial, sans-serif" font-weight="700" font-size="18">Tap to rate your</text>
+        <text x="150" y="292" text-anchor="middle" fill="#14171F" font-family="Arial, sans-serif" font-weight="700" font-size="18">experience</text>
+      </svg>
     </div>
   </div>
 </section>
@@ -631,15 +632,6 @@
 </div>
 
 <div class="size-compare">
-  <p class="size-compare-lead" data-da="Cirka på størrelse med en drinks-underlægger" data-en="About the size of a drink coaster">Cirka på størrelse med en drinks-underlægger</p>
-  <div class="size-compare-cards">
-    <div class="size-card size-card-ref size-card-round">
-      <span data-da="Underlægger" data-en="Coaster">Underlægger</span>
-    </div>
-    <div class="size-card size-card-ours">
-      <span data-da="QuickReview" data-en="QuickReview">QuickReview</span>
-    </div>
-  </div>
   <div class="mount-badge">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/>

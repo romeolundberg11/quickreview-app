@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QuickReview — NFC Google Review Card</title>
-<meta name="description" content="NFC Google-anmeldelseskort i PVC til din butik. Kunden tapper telefonen mod kortet, og Google-anmeldelsen åbner med det samme. Bestil dit kort i dag.">
+<meta name="description" content="NFC Google-anmeldelsesplade i akryl til din butik. Kunden tapper telefonen mod pladen, og Google-anmeldelsen åbner med det samme. Bestil din plade i dag.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314171F'/%3E%3Ccircle cx='50' cy='42' r='22' fill='none' stroke='%231FBFA8' stroke-width='7'/%3E%3Cpath d='M50 64 L50 80 M40 80 L60 80' stroke='%231FBFA8' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -197,15 +197,14 @@
     100%{width:340px;height:340px;opacity:0;}
   }
   .card{
-    width:clamp(220px,34vw,290px);
-    aspect-ratio:54/85.5;
+    width:clamp(220px,34vw,280px);
+    aspect-ratio:1/1;
     background:#fff;
-    border-radius:20px;
+    border-radius:16px;
     box-shadow:0 30px 60px -20px rgba(20,23,31,0.35), 0 4px 12px rgba(20,23,31,0.08);
     transform:rotate3d(0.4,-1,0,18deg);
     display:flex;flex-direction:column;align-items:center;
-    padding:clamp(24px,4vw,40px) clamp(16px,3vw,24px);
-    position:relative;
+    position:relative;overflow:hidden;
     animation:float 5s ease-in-out infinite;
     border:1px solid #eee;
   }
@@ -213,26 +212,32 @@
     0%,100%{transform:rotate3d(0.4,-1,0,18deg) translateY(0px);}
     50%{transform:rotate3d(0.4,-1,0,18deg) translateY(-14px);}
   }
-  .card .label{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.68rem;letter-spacing:0.1em;
-    color:#8A8F98;text-transform:uppercase;margin-bottom:28px;
+  .card-top{
+    width:100%;
+    background:linear-gradient(180deg,#3355CC,#5C7FE0);
+    padding:16% 10% 10%;
+    display:flex;flex-direction:column;align-items:center;
+    flex-shrink:0;
   }
-  .ring{
-    width:150px;height:150px;border-radius:50%;
-    background:conic-gradient(var(--g-blue) 0deg 90deg, var(--g-red) 90deg 180deg, var(--g-yellow) 180deg 270deg, var(--g-green) 270deg 360deg);
+  .card-stars{display:flex;gap:3px;margin-bottom:10px;}
+  .card-stars span{color:#E8B930;font-size:1rem;}
+  .card-headline{
+    color:#fff;font-weight:700;text-align:center;
+    font-size:0.82rem;line-height:1.35;letter-spacing:0.01em;
+  }
+  .g-circle{
+    width:22%;aspect-ratio:1/1;
+    background:#fff;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    margin-bottom:22px;
+    margin-top:-10%;box-shadow:0 4px 10px rgba(20,23,31,0.15);
   }
-  .ring-inner{
-    width:118px;height:118px;border-radius:50%;background:#fff;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    font-size:0.72rem;color:#333;text-align:center;line-height:1.3;
+  .g-circle svg{width:60%;height:60%;}
+  .card-nfc{flex-grow:1;display:flex;align-items:center;justify-content:center;}
+  .card-bottom{
+    width:100%;text-align:center;
+    font-weight:700;font-size:0.78rem;color:var(--ink);
+    padding-bottom:14%;
   }
-  .g-word{font-weight:600;font-size:0.98rem;margin-top:2px;}
-  .stars{display:flex;gap:4px;margin-bottom:26px;}
-  .stars span{color:var(--g-yellow);font-size:1.3rem;}
-  .nfc-mark{display:flex;align-items:center;gap:8px;color:#222;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;}
 
   /* ---------- SPEC STRIP ---------- */
   .spec-strip{
@@ -434,7 +439,7 @@
     gap:36px;
   }
   .size-card{
-    width:130px;aspect-ratio:54/85.5;
+    width:130px;aspect-ratio:1/1;
     border-radius:10px;
     display:flex;align-items:flex-end;justify-content:center;
     padding-bottom:14px;
@@ -448,10 +453,19 @@
     border:2px dashed var(--line);
     color:var(--gray);
   }
+  .size-card-round{border-radius:50%;}
   .size-card-ours{
     background:var(--ink);color:var(--paper);
     box-shadow:0 12px 24px -8px rgba(20,23,31,0.3);
   }
+  .mount-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:28px;
+    background:#fff;border:1.5px solid var(--line);
+    border-radius:100px;padding:10px 18px;
+    font-size:0.85rem;font-weight:600;color:var(--ink);
+  }
+  .mount-badge svg{color:var(--teal);flex-shrink:0;}
 
   /* ---------- ABOUT ---------- */
   .about-section{
@@ -548,7 +562,7 @@
     Quick<span>Review</span>
   </div>
   <div class="nav-links">
-    <a href="#why" data-da="Hvorfor dette kort?" data-en="Why this card?">Hvorfor dette kort?</a>
+    <a href="#why" data-da="Hvorfor denne plade?" data-en="Why this plate?">Hvorfor denne plade?</a>
     <a href="#how" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
     <a href="#cta" data-da="Priser" data-en="Pricing">Priser</a>
     <a href="#faq" data-da="Ofte stillede spørgsmål" data-en="FAQ">Ofte stillede spørgsmål</a>
@@ -570,7 +584,7 @@
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#why" data-da="Hvorfor dette kort?" data-en="Why this card?">Hvorfor dette kort?</a>
+  <a href="#why" data-da="Hvorfor denne plade?" data-en="Why this plate?">Hvorfor denne plade?</a>
   <a href="#how" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
   <a href="#cta" data-da="Priser" data-en="Pricing">Priser</a>
   <a href="#faq" data-da="Ofte stillede spørgsmål" data-en="FAQ">Ofte stillede spørgsmål</a>
@@ -582,8 +596,8 @@
 <section class="hero" style="padding-top:20px;">
   <div>
     <div class="eyebrow" data-da="NFC · ingen app · virker med det samme" data-en="NFC · no app · works instantly">NFC · ingen app · virker med det samme</div>
-    <h1 data-da="Bed aldrig om en anmeldelse igen. <em>Lad kortet gøre det.</em>" data-en="Never ask for a review again. <em>Let the card do it.</em>">Bed aldrig om en anmeldelse igen. <em>Lad kortet gøre det.</em></h1>
-    <p class="sub" data-da="Et PVC-kort på størrelse med et betalingskort. Kunden holder sin telefon hen til det, og Google-anmeldelsen åbner med det samme — ingen app, intet login, ingen undskyldning for at glemme det." data-en="A PVC card the size of a payment card. The customer holds their phone near it, and the Google review page opens instantly — no app, no login, no excuse to forget.">Et PVC-kort på størrelse med et betalingskort. Kunden holder sin telefon hen til det, og Google-anmeldelsen åbner med det samme — ingen app, intet login, ingen undskyldning for at glemme det.</p>
+    <h1 data-da="Bed aldrig om en anmeldelse igen. <em>Lad pladen gøre det.</em>" data-en="Never ask for a review again. <em>Let the plate do it.</em>">Bed aldrig om en anmeldelse igen. <em>Lad pladen gøre det.</em></h1>
+    <p class="sub" data-da="En akrylplade i bordformat (12 × 12 cm). Kunden holder sin telefon hen til den, og Google-anmeldelsen åbner med det samme — ingen app, intet login, ingen undskyldning for at glemme det." data-en="An acrylic stand plate (12 × 12 cm). The customer holds their phone near it, and the Google review page opens instantly — no app, no login, no excuse to forget.">En akrylplade i bordformat (12 × 12 cm). Kunden holder sin telefon hen til den, og Google-anmeldelsen åbner med det samme — ingen app, intet login, ingen undskyldning for at glemme det.</p>
     <div class="hero-actions">
       <a href="#how" class="btn-ghost" data-da="Sådan virker det" data-en="How it works">Sådan virker det</a>
     </div>
@@ -594,32 +608,44 @@
     <div class="ripple r2"></div>
     <div class="ripple r3"></div>
     <div class="card">
-      <div class="label">Customer Reviews</div>
-      <div class="ring">
-        <div class="ring-inner">Review us on<span class="g-word">Google</span></div>
+      <div class="card-top">
+        <div class="card-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="card-headline">WE WOULD<br>APPRECIATE YOUR<br>GOOGLE REVIEW!</div>
       </div>
-      <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="nfc-mark">NFC )))</div>
+      <div class="g-circle">
+        <svg width="34" height="34" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      </div>
+      <div class="card-nfc">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M2 12c0-1 .5-2 1.5-2M2 8c0-2 1.5-4 3.5-4M2 4c0-1 3-2 5-2" stroke="#14171F" stroke-width="1.6" stroke-linecap="round"/><rect x="9" y="7" width="9" height="14" rx="2" stroke="#14171F" stroke-width="1.6"/></svg>
+      </div>
+      <div class="card-bottom" data-da="Tap for at bedømme din oplevelse" data-en="Tap to rate your experience">Tap for at bedømme din oplevelse</div>
     </div>
   </div>
 </section>
 
 <div class="spec-strip mono">
-  <div class="spec-item"><div class="k" data-da="Mål" data-en="Size">Mål</div><div class="v" data-da="85,5 × 54 mm" data-en="85.5 × 54 mm">85,5 × 54 mm</div></div>
-  <div class="spec-item"><div class="k" data-da="Materiale" data-en="Material">Materiale</div><div class="v" data-da="PVC, vandresistent" data-en="PVC, water-resistant">PVC, vandresistent</div></div>
+  <div class="spec-item"><div class="k" data-da="Mål" data-en="Size">Mål</div><div class="v" data-da="12 × 12 cm" data-en="12 × 12 cm">12 × 12 cm</div></div>
+  <div class="spec-item"><div class="k" data-da="Materiale" data-en="Material">Materiale</div><div class="v" data-da="Akryl, vandtæt" data-en="Acrylic, waterproof">Akryl, vandtæt</div></div>
   <div class="spec-item"><div class="k" data-da="Teknologi" data-en="Technology">Teknologi</div><div class="v" data-da="NFC-chip" data-en="NFC chip">NFC-chip</div></div>
   <div class="spec-item"><div class="k" data-da="Kompatibilitet" data-en="Compatibility">Kompatibilitet</div><div class="v">iPhone &amp; Android</div></div>
 </div>
 
 <div class="size-compare">
-  <p class="size-compare-lead" data-da="Samme størrelse som dit betalingskort" data-en="Same size as your payment card">Samme størrelse som dit betalingskort</p>
+  <p class="size-compare-lead" data-da="Cirka på størrelse med en drinks-underlægger" data-en="About the size of a drink coaster">Cirka på størrelse med en drinks-underlægger</p>
   <div class="size-compare-cards">
-    <div class="size-card size-card-ref">
-      <span data-da="Betalingskort" data-en="Payment card">Betalingskort</span>
+    <div class="size-card size-card-ref size-card-round">
+      <span data-da="Underlægger" data-en="Coaster">Underlægger</span>
     </div>
     <div class="size-card size-card-ours">
       <span data-da="QuickReview" data-en="QuickReview">QuickReview</span>
     </div>
+  </div>
+  <div class="mount-badge">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span data-da="Selvklæbende bagside — klistres direkte fast på disk eller bord" data-en="Adhesive backing — sticks directly onto the counter or table">Selvklæbende bagside — klistres direkte fast på disk eller bord</span>
   </div>
 </div>
 
@@ -655,7 +681,7 @@
     <div class="why-card">
       <div class="problem" data-da="En plakat med QR-kode" data-en="A QR code poster">En plakat med QR-kode</div>
       <h3 data-da="QR-koder bliver overset" data-en="QR codes get overlooked">QR-koder bliver overset</h3>
-      <p data-da="De fleste scroller forbi. Et fysisk kort man kan række frem, eller sætte ved kassen, får faktisk opmærksomhed — og et NFC-kort virker uden kamera-app." data-en="Most people scroll past. A physical card you can hand over, or place by the register, actually gets noticed — and an NFC card works without opening a camera app.">De fleste scroller forbi. Et fysisk kort man kan række frem, eller sætte ved kassen, får faktisk opmærksomhed — og et NFC-kort virker uden kamera-app.</p>
+      <p data-da="De fleste scroller forbi. En fysisk plade man sætter synligt ved kassen eller på bordet, får faktisk opmærksomhed — og NFC virker uden kamera-app." data-en="Most people scroll past. A physical plate placed visibly by the register or on the table actually gets noticed — and NFC works without opening a camera app.">De fleste scroller forbi. En fysisk plade man sætter synligt ved kassen eller på bordet, får faktisk opmærksomhed — og NFC virker uden kamera-app.</p>
     </div>
   </div>
 </section>
@@ -668,8 +694,8 @@
   <div class="steps">
     <div class="step">
       <span class="num">01</span>
-      <h3 data-da="Hold telefonen mod kortet" data-en="Hold the phone to the card">Hold telefonen mod kortet</h3>
-      <p data-da="Ingen app, intet login. Telefonens indbyggede NFC-læser genkender kortet automatisk, ligesom betalingskort." data-en="No app, no login. The phone's built-in NFC reader recognizes the card automatically, just like a payment card.">Ingen app, intet login. Telefonens indbyggede NFC-læser genkender kortet automatisk, ligesom betalingskort.</p>
+      <h3 data-da="Hold telefonen mod pladen" data-en="Hold the phone to the plate">Hold telefonen mod pladen</h3>
+      <p data-da="Ingen app, intet login. Telefonens indbyggede NFC-læser genkender pladen automatisk med det samme." data-en="No app, no login. The phone's built-in NFC reader recognizes the plate automatically, right away.">Ingen app, intet login. Telefonens indbyggede NFC-læser genkender pladen automatisk med det samme.</p>
     </div>
     <div class="step">
       <span class="num">02</span>
@@ -685,41 +711,41 @@
 </section>
 
 <div class="belief">
-  <p data-da="Flere anmeldelser betyder <em>flere kunder finder dig</em> — og et lille kort ved kassen koster mindre end en enkelt annonce." data-en="More reviews mean <em>more customers find you</em> — and a small card by the register costs less than a single ad.">Flere anmeldelser betyder <em>flere kunder finder dig</em> — og et lille kort ved kassen koster mindre end en enkelt annonce.</p>
+  <p data-da="Flere anmeldelser betyder <em>flere kunder finder dig</em> — og en lille plade ved kassen koster mindre end en enkelt annonce." data-en="More reviews mean <em>more customers find you</em> — and a small plate by the register costs less than a single ad.">Flere anmeldelser betyder <em>flere kunder finder dig</em> — og en lille plade ved kassen koster mindre end en enkelt annonce.</p>
   <div class="attribution" data-da="— DESIGNET TIL RESTAURANTER, KLINIKKER, BUTIKKER OG SALONER" data-en="— DESIGNED FOR RESTAURANTS, CLINICS, SHOPS AND SALONS">— DESIGNET TIL RESTAURANTER, KLINIKKER, BUTIKKER OG SALONER</div>
 </div>
 
 <section id="cta" class="cta-block">
-  <h2 data-da="Sæt ét kort ved kassen. Se anmeldelserne følge med." data-en="Put one card by the register. Watch the reviews follow.">Sæt ét kort ved kassen. Se anmeldelserne følge med.</h2>
-  <p data-da='Klar til brug med det samme, tydelige "Review us on Google"-design. Engangskøb — intet abonnement.' data-en='Ready to use right away, with a clear "Review us on Google" design. One-time purchase — no subscription.'>Klar til brug med det samme, tydelige "Review us on Google"-design. Engangskøb — intet abonnement.</p>
+  <h2 data-da="Sæt én plade ved kassen. Se anmeldelserne følge med." data-en="Put one plate by the register. Watch the reviews follow.">Sæt én plade ved kassen. Se anmeldelserne følge med.</h2>
+  <p data-da='Klar til brug med det samme, tydeligt "We would appreciate your Google review"-design. Engangskøb — intet abonnement.' data-en='Ready to use right away, with a clear "We would appreciate your Google review" design. One-time purchase — no subscription.'>Klar til brug med det samme, tydeligt "We would appreciate your Google review"-design. Engangskøb — intet abonnement.</p>
 
   <div class="pricing mono">
     <div class="price-card">
       <div class="badge" data-da="Kom i gang" data-en="Get started">Kom i gang</div>
-      <h3 data-da="1 kort" data-en="1 card">1 kort</h3>
+      <h3 data-da="1 plade" data-en="1 plate">1 plade</h3>
       <div class="amount" data-da="200 kr" data-en="200 DKK">200 kr</div>
       <div class="desc" data-da="Perfekt hvis du vil teste ved én disk eller ét bord først." data-en="Perfect if you want to test at one counter or table first.">Perfekt hvis du vil teste ved én disk eller ét bord først.</div>
     </div>
 
     <div class="price-card">
-      <div class="badge" data-da="Pr. ekstra kort" data-en="Per extra card">Pr. ekstra kort</div>
+      <div class="badge" data-da="Pr. ekstra plade" data-en="Per extra plate">Pr. ekstra plade</div>
       <h3 data-da="Tilføj flere" data-en="Add more">Tilføj flere</h3>
       <div class="amount" data-da='75 kr <span class="unit">/ stk</span>' data-en='75 DKK <span class="unit">/ each</span>'>75 kr <span class="unit">/ stk</span></div>
-      <div class="desc" data-da="Læg til på tværs af flere diske, borde eller lokationer — betal kun 75 kr for hvert ekstra kort." data-en="Add cards across multiple counters, tables or locations — pay just 75 DKK for each extra card.">Læg til på tværs af flere diske, borde eller lokationer — betal kun 75 kr for hvert ekstra kort.</div>
+      <div class="desc" data-da="Læg til på tværs af flere diske, borde eller lokationer — betal kun 75 kr for hver ekstra plade." data-en="Add cards across multiple counters, tables or locations — pay just 75 DKK for each extra plate.">Læg til på tværs af flere diske, borde eller lokationer — betal kun 75 kr for hver ekstra plade.</div>
     </div>
 
     <div class="price-card featured">
       <div class="badge" data-da="Mest for pengene" data-en="Best value">Mest for pengene</div>
-      <h3 data-da="Pakke med 4 kort" data-en="4-card bundle">Pakke med 4 kort</h3>
+      <h3 data-da="Pakke med 4 plader" data-en="4-plate bundle">Pakke med 4 plader</h3>
       <div class="amount" data-da="349 kr" data-en="349 DKK">349 kr</div>
       <div><span class="strike" data-da="425 kr" data-en="425 DKK">425 kr</span><span class="save" data-da="Spar 76 kr" data-en="Save 76 DKK">Spar 76 kr</span></div>
-      <div class="desc" data-da="Samme kort, samme kvalitet — bare den bedste pris pr. stk. hvis du dækker flere borde eller medarbejdere på én gang." data-en="Same card, same quality — just the best price per card if you're covering multiple tables or staff at once.">Samme kort, samme kvalitet — bare den bedste pris pr. stk. hvis du dækker flere borde eller medarbejdere på én gang.</div>
+      <div class="desc" data-da="Samme plade, samme kvalitet — bare den bedste pris pr. stk. hvis du dækker flere borde eller medarbejdere på én gang." data-en="Same plate, same quality — just the best price per card if you're covering multiple tables or staff at once.">Samme plade, samme kvalitet — bare den bedste pris pr. stk. hvis du dækker flere borde eller medarbejdere på én gang.</div>
     </div>
   </div>
-  <div class="price-tag" data-da="Fri opsætning af NFC-link · standard PVC-kortstørrelse (85,5 × 54 mm)" data-en="Free NFC link setup · standard PVC card size (85.5 × 54 mm)">Fri opsætning af NFC-link · standard PVC-kortstørrelse (85,5 × 54 mm)</div>
+  <div class="price-tag" data-da="Fri opsætning af NFC-link · akrylplade i 12 × 12 cm" data-en="Free NFC link setup · 12 × 12 cm acrylic plate">Fri opsætning af NFC-link · akrylplade i 12 × 12 cm</div>
 
   <div class="contact-block" id="contact">
-    <p class="contact-personal" data-da="Jeg står personligt bag QuickReview og leverer selv hvert kort til din butik." data-en="I'm personally behind QuickReview and deliver every card to your shop myself.">Jeg står personligt bag QuickReview og leverer selv hvert kort til din butik.</p>
+    <p class="contact-personal" data-da="Jeg står personligt bag QuickReview og leverer selv hver plade til din butik." data-en="I'm personally behind QuickReview and deliver every plate to your shop myself.">Jeg står personligt bag QuickReview og leverer selv hver plade til din butik.</p>
     <p class="contact-lead" data-da="Kontakt os for at bestille" data-en="Contact us to order">Kontakt os for at bestille</p>
     <div class="contact-links">
       <a href="tel:+4593925805" class="contact-link">+45 93 92 58 05</a>
@@ -736,19 +762,19 @@
 
   <div class="faq-item">
     <h3 data-da="Virker det på alle telefoner?" data-en="Does it work on all phones?">Virker det på alle telefoner?</h3>
-    <p data-da="Ja — stort set alle nyere iPhones (iPhone 7 og nyere) og Android-telefoner fra de seneste år har NFC indbygget og skal blot holdes hen mod kortet. Meget gamle telefoner uden NFC kan ikke bruge funktionen." data-en="Yes — nearly all newer iPhones (iPhone 7 and later) and Android phones from recent years have NFC built in and just need to be held near the card. Very old phones without NFC can't use the feature.">Ja — stort set alle nyere iPhones (iPhone 7 og nyere) og Android-telefoner fra de seneste år har NFC indbygget og skal blot holdes hen mod kortet. Meget gamle telefoner uden NFC kan ikke bruge funktionen.</p>
+    <p data-da="Ja — stort set alle nyere iPhones (iPhone 7 og nyere) og Android-telefoner fra de seneste år har NFC indbygget og skal blot holdes hen mod pladen. Meget gamle telefoner uden NFC kan ikke bruge funktionen." data-en="Yes — nearly all newer iPhones (iPhone 7 and later) and Android phones from recent years have NFC built in and just need to be held near the plate. Very old phones without NFC can't use the feature.">Ja — stort set alle nyere iPhones (iPhone 7 og nyere) og Android-telefoner fra de seneste år har NFC indbygget og skal blot holdes hen mod pladen. Meget gamle telefoner uden NFC kan ikke bruge funktionen.</p>
   </div>
   <div class="faq-item">
-    <h3 data-da="Hvor lang tid går der, før jeg har mit kort?" data-en="How long until I have my card?">Hvor lang tid går der, før jeg har mit kort?</h3>
-    <p data-da="Der er ingen fragttid at vente på — vi aftaler tid og sted, når du bestiller, og leverer kortet personligt til dig eller din butik i nærområdet." data-en="There's no shipping time to wait for — we agree on a time and place when you order, and deliver the card personally to you or your shop nearby.">Der er ingen fragttid at vente på — vi aftaler tid og sted, når du bestiller, og leverer kortet personligt til dig eller din butik i nærområdet.</p>
+    <h3 data-da="Hvor lang tid går der, før jeg har min plade?" data-en="How long until I have my plate?">Hvor lang tid går der, før jeg har min plade?</h3>
+    <p data-da="Der er ingen fragttid at vente på — vi aftaler tid og sted, når du bestiller, og leverer pladen personligt til dig eller din butik i nærområdet." data-en="There's no shipping time to wait for — we agree on a time and place when you order, and deliver the plate personally to you or your shop nearby.">Der er ingen fragttid at vente på — vi aftaler tid og sted, når du bestiller, og leverer pladen personligt til dig eller din butik i nærområdet.</p>
   </div>
   <div class="faq-item">
     <h3 data-da="Kan jeg ændre linket, hvis min anmeldelsesside skifter?" data-en="Can I change the link if my review page changes?">Kan jeg ændre linket, hvis min anmeldelsesside skifter?</h3>
-    <p data-da="Ja, send blot en besked, så opdaterer vi NFC-chippen til det nye link. Der kommer et lille gebyr på for at genprogrammere kortet." data-en="Yes, just send us a message and we'll update the NFC chip to the new link. A small fee applies for reprogramming the card.">Ja, send blot en besked, så opdaterer vi NFC-chippen til det nye link. Der kommer et lille gebyr på for at genprogrammere kortet.</p>
+    <p data-da="Ja, send blot en besked, så opdaterer vi NFC-chippen til det nye link. Der kommer et lille gebyr på for at genprogrammere pladen." data-en="Yes, just send us a message and we'll update the NFC chip to the new link. A small fee applies for reprogramming the plate.">Ja, send blot en besked, så opdaterer vi NFC-chippen til det nye link. Der kommer et lille gebyr på for at genprogrammere pladen.</p>
   </div>
   <div class="faq-item">
-    <h3 data-da="Kan jeg vælge mit eget logo eller design på kortet?" data-en="Can I choose my own logo or design on the card?">Kan jeg vælge mit eget logo eller design på kortet?</h3>
-    <p data-da='Nej, kortet leveres kun med det faste "Review us on Google"-design vist herover — det kan ikke ændres til dit eget logo eller design.' data-en='No, the card is only available with the fixed "Review us on Google" design shown above — it cannot be changed to your own logo or design.'>Nej, kortet leveres kun med det faste "Review us on Google"-design vist herover — det kan ikke ændres til dit eget logo eller design.</p>
+    <h3 data-da="Kan jeg vælge mit eget logo eller design på pladen?" data-en="Can I choose my own logo or design on the plate?">Kan jeg vælge mit eget logo eller design på pladen?</h3>
+    <p data-da='Nej, pladen leveres kun med det faste "We would appreciate your Google review"-design vist herover — det kan ikke ændres til dit eget logo eller design.' data-en='No, the plate is only available with the fixed "We would appreciate your Google review" design shown above — it cannot be changed to your own logo or design.'>Nej, pladen leveres kun med det faste "We would appreciate your Google review"-design vist herover — det kan ikke ændres til dit eget logo eller design.</p>
   </div>
 </section>
 

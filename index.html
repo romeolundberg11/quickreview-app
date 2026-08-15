@@ -376,7 +376,9 @@
   }
   .footer-contact a{
     color:var(--gray);transition:color .15s ease;
+    margin-right:18px;
   }
+  .footer-contact a:last-child{margin-right:0;}
   .footer-contact a:hover{color:var(--teal);}
 
   /* ---------- SIZE COMPARE ---------- */
@@ -450,9 +452,12 @@
     font-size:0.95rem;color:var(--gray);margin-bottom:14px;
   }
   .contact-personal{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:1.05rem;font-weight:500;color:var(--ink);
-    max-width:36ch;margin:0 auto 18px;line-height:1.4;
+    display:inline-flex;align-items:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.85rem;font-weight:600;color:var(--ink);
+    background:#fff;border:1.5px solid var(--line);
+    border-radius:100px;padding:10px 18px;
+    margin:0 auto 18px;
   }
   .contact-links{
     display:flex;flex-direction:column;gap:10px;
@@ -679,7 +684,7 @@
   <div class="price-tag" data-da="Fri opsætning af NFC-link · akrylplade i 12 × 12 cm" data-en="Free NFC link setup · 12 × 12 cm acrylic plate">Fri opsætning af NFC-link · akrylplade i 12 × 12 cm</div>
 
   <div class="contact-block" id="contact">
-    <p class="contact-personal" data-da="Jeg står personligt bag QuickReview og leverer selv hver plade til din butik." data-en="I'm personally behind QuickReview and deliver every plate to your shop myself.">Jeg står personligt bag QuickReview og leverer selv hver plade til din butik.</p>
+    <p class="contact-personal" data-da="Jeg står personligt bag QuickReview — spørg mig om alt." data-en="I'm personally behind QuickReview — ask me anything.">Jeg står personligt bag QuickReview — spørg mig om alt.</p>
     <p class="contact-lead" data-da="Kontakt os for at bestille" data-en="Contact us to order">Kontakt os for at bestille</p>
     <div class="contact-links">
       <a href="tel:+4593925805" class="contact-link">+45 93 92 58 05</a>

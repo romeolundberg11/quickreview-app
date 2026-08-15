@@ -184,19 +184,17 @@
   .card{
     width:clamp(220px,34vw,280px);
     aspect-ratio:1/1;
-    background:#fff;
-    border-radius:16px;
-    box-shadow:0 30px 60px -20px rgba(20,23,31,0.35), 0 4px 12px rgba(20,23,31,0.08);
+    background:transparent;
     transform:rotate3d(0.4,-1,0,18deg);
     display:flex;
-    position:relative;overflow:hidden;
+    position:relative;
     animation:float 5s ease-in-out infinite;
-    border:1px solid #eee;
   }
   .card-photo{
     width:100%;height:100%;
-    object-fit:cover;
+    object-fit:contain;
     display:block;
+    filter:drop-shadow(0 24px 40px rgba(20,23,31,0.35)) drop-shadow(0 4px 10px rgba(20,23,31,0.12));
   }
   @keyframes float{
     0%,100%{transform:rotate3d(0.4,-1,0,18deg) translateY(0px);}
